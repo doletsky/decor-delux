@@ -8,7 +8,7 @@
     <head>
         <title>ВсяОтделка.ру - интернет-гипермаркет отделочных материлов</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, shrink-to-fit=no">
-        <link href="/local/templates/new-decor-delux/css/main.css?10" rel="stylesheet">
+        <link href="http://192.168.0.101/local/templates/new-decor-delux/css/main.css?10" rel="stylesheet">
     </head>
 
     <body>
@@ -78,16 +78,16 @@
 
     <section class="dd-gallery container-fluid">
         <div class="dd-gallery__list row">
-            <a class="dd-gallery__item _oboi col-12 col-sm-3">
+            <a class="dd-gallery__item _oboi col-12 col-sm-3 col-lg-3">
                 <div class="dd-gallery__item-title">Обои</div>
             </a>
-            <a class="dd-gallery__item _kraski col-12 col-sm-3">
+            <a class="dd-gallery__item _kraski col-12 col-sm-3 col-lg-3">
                 <div class="dd-gallery__item-title">Краски</div>
             </a>
-            <a class="dd-gallery__item _lepnina col-12 col-sm-3">
+            <a class="dd-gallery__item _lepnina col-12 col-sm-3 col-lg-3">
                 <div class="dd-gallery__item-title">Лепнина</div>
             </a>
-            <a class="dd-gallery__item _textil col-12 col-sm-3">
+            <a class="dd-gallery__item _textil col-12 col-sm-3 col-lg-3">
                 <div class="dd-gallery__item-title">Текстиль</div>
             </a>
         </div>
