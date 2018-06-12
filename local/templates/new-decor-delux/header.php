@@ -5,6 +5,8 @@
     <title>ВсяОтделка.ру - интернет-гипермаркет отделочных материлов</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, shrink-to-fit=no">
     <link href="./local/templates/new-decor-delux/css/main.css?10" rel="stylesheet">
+    <link href="./local/templates/new-decor-delux/css/magnific-popup.css" rel="stylesheet">
+    <?$APPLICATION->ShowHead();?>
 </head>
 
 <body>
