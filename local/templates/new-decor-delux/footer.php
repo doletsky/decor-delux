@@ -34,7 +34,7 @@
 <!--                    <script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3Acabd6280e34890eb655a2550008d600d4c7822a1526ca8abbaca13442788284a&amp;width=100%&amp;height=315&amp;lang=ru_RU&amp;scroll=true"></script>-->
                 </div>
                 <div class="dd-footer__forms col-12 col-sm-4">
-                    <form class="dd-callback form-inline">
+                    <form class="dd-callback form-inline" style="margin-bottom: 1em;">
                         <div class="form-group">
                             <input id="phone" type="text" class="form-control-plaintext" value="">
                             <button type="submit" onclick="return false" class="btn btn-primary">Заказать звонок</button>
@@ -48,17 +48,29 @@
                     </div>
 
                     <div class="dd-footer__subscribe">
-                        <div class="dd-footer__subscribe-title">
-                            <img src="/local/templates/new-decor-delux/images/subscribe.png">
-                            <span class="dd-footer__subscribe-title-text">подписывайтесь<br>на наши новости</span>
-                        </div>
-                        <form class="form-inline">
-                            <div class="form-group">
-                                <input type="text" class="form-control-plaintext" value="">
-                                <button type="submit" class="btn btn-primary">Подписаться</button>
-                            </div>
-                        </form>
+                        <?$APPLICATION->IncludeComponent("bitrix:subscribe.form","",Array(
+                                "USE_PERSONALIZATION" => "Y",
+                                "PAGE" => "/",
+                                "SHOW_HIDDEN" => "Y",
+                                "CACHE_TYPE" => "A",
+                                "CACHE_TIME" => "3600"
+                            )
+                        );?>
+<!--                        --><?//$APPLICATION->IncludeComponent("bitrix:subscribe.edit","",Array(
+//                            "AJAX_MODE" => "N",
+//                            "SHOW_HIDDEN" => "Y",
+//                            "ALLOW_ANONYMOUS" => "Y",
+//                            "SHOW_AUTH_LINKS" => "Y",
+//                            "CACHE_TYPE" => "A",
+//                            "CACHE_TIME" => "3600",
+//                            "SET_TITLE" => "Y",
+//                            "AJAX_OPTION_JUMP" => "N",
+//                            "AJAX_OPTION_STYLE" => "Y",
+//                            "AJAX_OPTION_HISTORY" => "N"
+//                        )
+//);?>
                     </div>
+
                 </div>
             </div>
         </div>
