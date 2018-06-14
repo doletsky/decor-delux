@@ -44,8 +44,8 @@ $APPLICATION->SetTitle(false);
                 "INCLUDE_SUBSECTIONS" => "Y",
                 "CACHE_TYPE" => "N",
                 "CACHE_TIME" => "3600",
-                "CACHE_FILTER" => "Y",
-                "CACHE_GROUPS" => "Y",
+                "CACHE_FILTER" => "N",
+                "CACHE_GROUPS" => "N",
                 "DISPLAY_TOP_PAGER" => "N",
                 "DISPLAY_BOTTOM_PAGER" => "N",
                 "PAGER_TITLE" => "Новости",
@@ -74,150 +74,42 @@ $APPLICATION->SetTitle(false);
     <section class="dd-catalog container">
         <div class="row">
             <div class="col-12 col-sm-2">
-                <button class="dd-catalog__toggle-filter d-block d-sm-none">Параметры поиска</button>
-                <section class="dd-catalog__filter">
-                    <div class="dd-catalog__filter-header d-none d-sm-block">Параметры поиска</div>
-                    <div class="dd-catalog__filter-item _active">
-                        <div class="dd-catalog__filter-item-head">
-                            Бренд
-                        </div>
-                        <ul class="dd-catalog__filter-item-body list-unstyled">
-                            <li class="dd-catalog__filter-item-link">
-                                <input type="checkbox" id="mark-1-1">
-                                <label for="mark-1-1">Architects Paper <span class="_count">(118)</span></label>
-                            </li>
-                            <li class="dd-catalog__filter-item-link">
-                                <input type="checkbox" id="mark-1-2">
-                                <label for="mark-1-2">Architects Paper <span class="_count">(118)</span></label>
-                            </li>
-                            <li class="dd-catalog__filter-item-link">
-                                <input type="checkbox" id="mark-1-3">
-                                <label for="mark-1-3">Architects Paper <span class="_count">(118)</span></label>
-                            </li>
-                            <li class="dd-catalog__filter-item-link">
-                                <input type="checkbox" id="mark-1-4">
-                                <label for="mark-1-4">Architects Paper <span class="_count">(118)</span></label>
-                            </li>
-                            <li class="dd-catalog__filter-item-link">
-                                <input type="checkbox" id="mark-1-5">
-                                <label for="mark-1-5">Architects Paper <span class="_count">(118)</span></label>
-                            </li>
-                            <li class="dd-catalog__filter-item-link">
-                                <input type="checkbox" id="mark-1-6">
-                                <label for="mark-1-6">Architects Paper <span class="_count">(118)</span></label>
-                            </li>
-                            <li class="dd-catalog__filter-item-link _hidden">
-                                <input type="checkbox" id="mark-1-7">
-                                <label for="mark-1-7">Architects Paper <span class="_count">(118)</span></label>
-                            </li>
-                            <li class="dd-catalog__filter-item-link _hidden">
-                                <input type="checkbox" id="mark-1-8">
-                                <label for="mark-1-8">Architects Paper <span class="_count">(118)</span></label>
-                            </li>
-                            <li class="dd-catalog__filter-item-link _hidden">
-                                <input type="checkbox" id="mark-1-9">
-                                <label for="mark-1-9">Architects Paper <span class="_count">(118)</span></label>
-                            </li>
-                            <li class="dd-catalog__filter-item-link _hidden">
-                                <input type="checkbox" id="mark-1-10">
-                                <label for="mark-1-10">Architects Paper <span class="_count">(118)</span></label>
-                            </li>
-                            <li class="dd-catalog__filter-item-link">
-                                    <span class="dd-catalog__filter-item-more">
-                                        <img src="<?=SITE_TEMPLATE_PATH?>/images/catalog-arrow.png">Еще <span class="_count">(15)</span>
-                                    </span>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="dd-catalog__filter-item">
-                        <div class="dd-catalog__filter-item-head">
-                            Коллекция
-                        </div>
-                        <ul class="dd-catalog__filter-item-body list-unstyled">
-                            <li class="dd-catalog__filter-item-link">
-                                <input type="checkbox" id="mark-2-1">
-                                <label for="mark-2-1">Architects Paper <span class="_count">(118)</span></label>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="dd-catalog__filter-item">
-                        <div class="dd-catalog__filter-item-head">
-                            Цвет
-                        </div>
-                        <ul class="dd-catalog__filter-item-body list-unstyled">
-                            <li class="dd-catalog__filter-item-link">
-                                <input type="checkbox" id="mark-4-1">
-                                <label for="mark-4-1">Architects Paper <span class="_count">(118)</span></label>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="dd-catalog__filter-item">
-                        <div class="dd-catalog__filter-item-head">
-                            Правило совмещения
-                        </div>
-                        <ul class="dd-catalog__filter-item-body list-unstyled">
-                            <li class="dd-catalog__filter-item-link">
-                                <input type="checkbox" id="mark-5-1">
-                                <label for="mark-5-1">Architects Paper <span class="_count">(118)</span></label>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="dd-catalog__filter-item">
-                        <div class="dd-catalog__filter-item-head">
-                            Дизайн
-                        </div>
-                        <ul class="dd-catalog__filter-item-body list-unstyled">
-                            <li class="dd-catalog__filter-item-link">
-                                <input type="checkbox" id="mark-6-1">
-                                <label for="mark-6-1">Architects Paper <span class="_count">(118)</span></label>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="dd-catalog__filter-item">
-                        <div class="dd-catalog__filter-item-head">
-                            Тип обоев
-                        </div>
-                        <ul class="dd-catalog__filter-item-body list-unstyled">
-                            <li class="dd-catalog__filter-item-link">
-                                <input type="checkbox" id="mark-7-1">
-                                <label for="mark-7-1">Architects Paper <span class="_count">(118)</span></label>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="dd-catalog__filter-item">
-                        <div class="dd-catalog__filter-item-head">
-                            Основа
-                        </div>
-                        <ul class="dd-catalog__filter-item-body list-unstyled">
-                            <li class="dd-catalog__filter-item-link">
-                                <input type="checkbox" id="mark-8-1">
-                                <label for="mark-8-1">Architects Paper <span class="_count">(118)</span></label>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="dd-catalog__filter-item">
-                        <div class="dd-catalog__filter-item-head">
-                            Стиль
-                        </div>
-                        <ul class="dd-catalog__filter-item-body list-unstyled">
-                            <li class="dd-catalog__filter-item-link">
-                                <input type="checkbox" id="mark-9-1">
-                                <label for="mark-9-1">Architects Paper <span class="_count">(118)</span></label>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="dd-catalog__filter-item">
-                        <div class="dd-catalog__filter-item-head">
-                            Скидки
-                        </div>
-                        <ul class="dd-catalog__filter-item-body list-unstyled">
-                            <li class="dd-catalog__filter-item-link">
-                                <input type="checkbox" id="mark-10-1">
-                                <label for="mark-10-1">Architects Paper <span class="_count">(118)</span></label>
-                            </li>
-                        </ul>
-                    </div>
-                </section>
+                <?$APPLICATION->IncludeComponent(
+                    "bitrix:catalog.smart.filter",
+                    ".default",
+                    array(
+                        "COMPONENT_TEMPLATE" => ".default",
+                        "IBLOCK_TYPE" => "catalog",
+                        "IBLOCK_ID" => "2",
+                        "SECTION_ID" => "",
+                        "SECTION_CODE" => "",
+                        "FILTER_NAME" => "arrFilter",
+                        "HIDE_NOT_AVAILABLE" => "N",
+                        "TEMPLATE_THEME" => "blue",
+                        "FILTER_VIEW_MODE" => "horizontal",
+                        "DISPLAY_ELEMENT_COUNT" => "Y",
+                        "SEF_MODE" => "Y",
+                        "CACHE_TYPE" => "A",
+                        "CACHE_TIME" => "36000000",
+                        "CACHE_GROUPS" => "Y",
+                        "SAVE_IN_SESSION" => "N",
+                        "INSTANT_RELOAD" => "Y",
+                        "PAGER_PARAMS_NAME" => "arrPager",
+                        "PRICE_CODE" => array(
+                            0 => "BASE",
+                        ),
+                        "CONVERT_CURRENCY" => "Y",
+                        "XML_EXPORT" => "N",
+                        "SECTION_TITLE" => "-",
+                        "SECTION_DESCRIPTION" => "-",
+                        "POPUP_POSITION" => "left",
+                        "SEF_RULE" => "/examples/books/#SECTION_ID#/filter/#SMART_FILTER_PATH#/apply/",
+                        "SECTION_CODE_PATH" => "",
+                        "SMART_FILTER_PATH" => $_REQUEST["SMART_FILTER_PATH"],
+                        "CURRENCY_ID" => "RUB"
+                    ),
+                    false
+                );?>
             </div>
             <?
             $SORT_ORDER='asc';
