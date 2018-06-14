@@ -20,7 +20,7 @@ $this->setFrameMode(true);
             <div class="dd-card__footer">
                 <div class="dd-card__name"><?echo $arItem["IBLOCK_NAME"]?></div>
                 <div class="dd-card__title"><?echo $arItem["NAME"]?></div>
-                <div class="dd-card__subtitle"><?if(strlen($arItem["PREVIEW_TEXT"])) echo $arItem["PREVIEW_TEXT"]; else TruncateText($arItem["DETAIL_TEXT"], 40);?></div>
+                <div class="dd-card__subtitle"><?echo $arItem["PREVIEW_TEXT"]?></div>
             </div>
         </a>
     </div>

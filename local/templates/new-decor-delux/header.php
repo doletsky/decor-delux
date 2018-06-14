@@ -4,8 +4,8 @@
 <head>
     <title>ВсяОтделка.ру - интернет-гипермаркет отделочных материлов</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, shrink-to-fit=no">
-    <link href="./local/templates/new-decor-delux/css/main.css?10" rel="stylesheet">
-    <link href="./local/templates/new-decor-delux/css/magnific-popup.css" rel="stylesheet">
+    <link href="<?=SITE_TEMPLATE_PATH?>/css/main.css?10" rel="stylesheet">
+    <link href="<?=SITE_TEMPLATE_PATH?>/css/magnific-popup.css" rel="stylesheet">
     <?$APPLICATION->ShowHead();?>
 </head>
 
@@ -55,12 +55,11 @@
     );?>
 </header>
 
-<section class="dd-gallery container-fluid">
+
     <?$APPLICATION->IncludeComponent("bitrix:main.include","",Array(
             "AREA_FILE_SHOW" => "page",
             "AREA_FILE_SUFFIX" => "inc",
             "EDIT_TEMPLATE" => ""
         )
     );?>
-</section>
 

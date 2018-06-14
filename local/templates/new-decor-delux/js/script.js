@@ -41,6 +41,60 @@ $(document).ready(function () {
         });
     });
 
+    //сотртировка каталога
+    $('select.dd-catalog__list-sort').on('change', function (e) {
+        var optionSelected = $("option:selected", this);
+        var valueSelected = this.value;
+        var href=location.href;
+        if(href.indexOf('?') > -1){
+            var arHref=href.split('?');
+            if(arHref[1].indexOf('c_sort')>-1){
+                var params=arHref[1].split('&');
+                for (var i in params){
+                    if(params[i].indexOf('c_sort')>-1){
+                        params[i]='c_sort='+valueSelected;
+                    }
+                }
+                strParam=params.join('&');
+            }else{
+                strParam=arHref[1]+'&c_sort='+valueSelected;
+            }
+
+            href=location.pathname+'?'+strParam;
+        }
+        else {
+            href+='?c_sort='+valueSelected;
+        }
+        location.href=href;
+    });
+    //dd-catalog__list-page-count
+    $('select.dd-catalog__list-page-count').on('change', function (e) {
+        var optionSelected = $("option:selected", this);
+        var valueSelected = this.value;
+        var href=location.href;
+        var strParam='';
+        if(href.indexOf('?') > -1){
+            var arHref=href.split('?');
+            if(arHref[1].indexOf('c_num_page')>-1){
+                var params=arHref[1].split('&');
+                for (var i in params){
+                    if(params[i].indexOf('c_num_page')>-1){
+                        params[i]='c_num_page='+valueSelected;
+                    }
+                }
+                strParam=params.join('&');
+            }else{
+                strParam=arHref[1]+'&c_num_page='+valueSelected;
+            }
+
+            href=location.pathname+'?'+strParam;
+        }
+        else {
+            href+='?c_num_page='+valueSelected;
+        }
+        location.href=href;
+    });
+
 
 });
 var popupText=''; //содержимое текстового popup
