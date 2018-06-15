@@ -12,15 +12,12 @@
 /** @var CBitrixComponent $component */
 $this->setFrameMode(true);
 ?>
-<h2>Бренды</h2>
-<div class="dd-brands-list row">
-    <?foreach($arResult["ITEMS"] as $arItem):?>
-    <div class="col-4 col-sm-2">
-        <div class="dd-brands-list__item">
-            <a href="<?=$arItem["DETAIL_PAGE_URL"]?>">
-                <img src="<?=$arItem["PREVIEW_PICTURE"]["SRC"]?>">
-            </a>
-        </div>
+<div class="dd-brands__desc row">
+    <div class="dd-brands__logo col-12 col-sm-4">
+        <img class="img-fluid" src="<?=$arResult["PREVIEW_PICTURE"]["SRC"]?>">
     </div>
-    <?endforeach;?>
+    <div class="col-12 col-sm-8">
+        <?echo $arResult["DETAIL_TEXT"];?>
+    </div>
 </div>
+<div class="separator"></div>
