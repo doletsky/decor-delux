@@ -10,7 +10,6 @@ $APPLICATION->SetTitle("Обои");
         &nbsp>&nbsp
         <span class="dd-breadcrumbs__link">Страница</span>
     </section>
-<pre><?print_r($_REQUEST)?></pre>
 <?if(isset($_REQUEST["collection"])):?>
     <section class="container">
         <?$APPLICATION->IncludeComponent("bitrix:news.detail","brand",Array(
@@ -31,7 +30,7 @@ $APPLICATION->SetTitle("Обои");
                 "ELEMENT_CODE" => $_REQUEST["collection"],
                 "CHECK_DATES" => "Y",
                 "FIELD_CODE" => Array("ID", "PREVIEW_PICTURE"),
-                "PROPERTY_CODE" => Array("DESCRIPTION"),
+                "PROPERTY_CODE" => Array(""),
                 "IBLOCK_URL" => "news.php?ID=#IBLOCK_ID#\"",
                 "DETAIL_URL" => "",
                 "SET_TITLE" => "Y",

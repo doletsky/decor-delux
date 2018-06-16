@@ -1443,8 +1443,9 @@
 }
 
 .dd-profile__slider-main {
-    height: 660px;
-    overflow: hidden
+    height: 630px;
+    overflow: hidden;
+    margin-bottom: 30px;
 }
 
 ._paint .dd-profile__slider-main {
