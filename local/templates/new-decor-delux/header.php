@@ -34,7 +34,7 @@
             <a class="dd-header-top__tools-enter" href="">
                 <img src="/local/templates/new-decor-delux/images/enter.png">
             </a>
-            <a class="dd-header-top__tools-cart" href="">
+            <a class="dd-header-top__tools-cart" href="/basket/">
                 <img src="/local/templates/new-decor-delux/images/cart.png">
             </a>
         </div>

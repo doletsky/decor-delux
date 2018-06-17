@@ -99,13 +99,30 @@ $(document).ready(function () {
     $('.dd-profile__info-buy-btn').click(function () {
         var id=$(this).children('span#buy-action').data('id');
         var quantity=$('#quantity').val();
-        console.log(id, quantity);
         $.ajax({
             type: 'POST',
             url: '/local/templates/new-decor-delux/components/bitrix/catalog.element/decor/ajax.php',
             data: {id: id, quantity:quantity},
             success: function () {
                 popupText= 'Товар успешно добавлен в карзину' ;
+                popupOpen();
+            }
+        });
+    });
+
+    //оформление заказа - кнопка Отправить
+    $('#send-order').click(function () {
+        var name=$('form#form-send-order').find('input#name').val();
+        var email=$('form#form-send-order').find('input#email').val();
+        var phone=$('form#form-send-order').find('input#phone').val();
+        $.ajax({
+            type: 'POST',
+            url: '/local/templates/new-decor-delux/components/bitrix/sale.basket.basket/decor/ajax.php',
+            data: {name: name, email:email, phone:phone},
+            success: function () {
+                $('form#form-send-order').find('input').val('');
+                $('#basket_form').remove();
+                popupText= 'Спасибо. В ближайшее время с Вами свяжется наш менеджер.' ;
                 popupOpen();
             }
         });

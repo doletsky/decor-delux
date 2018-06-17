@@ -11,3 +11,5 @@ global $USER, $APPLICATION;
 
 
 echo Add2BasketByProductID($_POST["id"], $_POST["quantity"]);
+if ($ex = $APPLICATION->GetException())
+    echo '<br>'.$ex->GetString();
