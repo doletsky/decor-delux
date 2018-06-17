@@ -1,6 +1,4 @@
-<? if (!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true) die();
-//, "ARTNUMBER"
-?><pre><?print_r($arResult)?></pre>
+<? if (!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true) die();?>
     <div class="row">
         <div class="dd-profile__slider col-12 col-sm-6">
             <h3 class="d-block d-sm-none"><?=$arResult['NAME']?></h3>
@@ -33,14 +31,14 @@
                 <span>Артикул № <?=$arResult["ARTNUMBER_VALUE"]?></span>
             </div>
             <div class="dd-profile__info-buy">
-                <div class="dd-profile__info-buy-price">1250 Р</div>
+                <div class="dd-profile__info-buy-price"><?=substr($arResult["CATALOG_PRICE_1"], 0 , -3)?> Р</div>
                 <div class="dd-profile__info-buy-count">
                     <div class="dd-profile__info-buy-count-btn _minus">&minus;</div>
-                    <input type="text" class="dd-profile__info-buy-count-value" value="100">
+                    <input type="text" class="dd-profile__info-buy-count-value" id="quantity" value="100">
                     <div class="dd-profile__info-buy-count-btn _plus">+</div>
                 </div>
                 <button class="dd-profile__info-buy-btn">
-                    <span class="d-none d-sm-block">Купить</span>
+                    <span class="d-none d-sm-block" id="buy-action" data-id="<?=$arResult["ID"]?>">Купить</span>
                     <img class="d-block d-sm-none" src="<?=SITE_TEMPLATE_PATH?>/images/profile-cart.png">
                 </button>
             </div>
@@ -62,7 +60,7 @@
                     <?foreach ($arResult["OTHER_COLORS"] as $col):?>
                     <div class="dd-profile__info-variant-slider-item _active">
                         <div class="dd-profile__info-variant-slider-item-inner">
-                            <img src="<?=$col["pic"]?>">
+                            <a href="<?=$col["url"]?>" ><img src="<?=$col["pic"]?>"></a>
                         </div>
                     </div>
                         <?endforeach;?>
@@ -91,10 +89,24 @@
             Рекомендуем также
         </div>
         <div class="dd-catalog__list-wrap row">
-            <!--            --><?// include '../src/templates/list-item.blade.php' ?>
-            <!--            --><?// include '../src/templates/list-item.blade.php' ?>
-            <!--            --><?// include '../src/templates/list-item.blade.php' ?>
-            <!--            --><?// include '../src/templates/list-item.blade.php' ?>
+            <?if(is_array($arResult["ASSOCIATED"])): $count=4;?>
+<?foreach ($arResult["ASSOCIATED"] as $elem): if($count<=0) break;?>
+            <div class="dd-catalog__list-item col-6 col-sm-3">
+                <a class="dd-catalog__list-item-link" href="<?=$elem["url"]?>">
+                    <img class="img-fluid" src="<?=$elem["pic"]?>" style="height: 296px;">
+                    <div class="dd-catalog__list-item-footer">
+                        <div class="dd-catalog__list-item-title"><?=$elem["name"]?></div>
+                        <div class="dd-catalog__list-item-info">
+                            Бренд - <?=$elem["brand"]?>
+                            <span>Артикул № <?=$elem["artnumber"]?></span>
+                        </div>
+                        <div class="dd-catalog__list-item-price"><?=$elem["price"]?> руб</div>
+                    </div>
+                </a>
+            </div>
+                    <?$count--;?>
+<?endforeach;?>
+            <?endif?>
         </div>
     </div>
 <?

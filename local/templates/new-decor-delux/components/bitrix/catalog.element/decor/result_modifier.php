@@ -40,13 +40,27 @@ if(is_array($arResult["DISPLAY_PROPERTIES"]["ASSOCIATED"]["LINK_ELEMENT_VALUE"])
             "ACTIVE"=>"Y",
             "ID"=>$i
         );
-        $res = CIBlockElement::GetList(Array("SORT"=>"ASC"), $arFilter, false, false, array("ID", "IBLOCK_ID", "PROPERTY_BRAND.CODE", "PROPERTY_COLLECTION.CODE"));
+        $arAsFilter=array(
+            "ID",
+            "IBLOCK_ID",
+            "NAME",
+            "PROPERTY_BRAND.CODE",
+            "PROPERTY_BRAND.NAME",
+            "PROPERTY_COLLECTION.CODE",
+            "PROPERTY_ARTNUMBER",
+            "CATALOG_GROUP_1"
+        );
+        $res = CIBlockElement::GetList(Array("SORT"=>"ASC"), $arFilter, false, false, $arAsFilter);
         $ar_fields = $res->GetNext();
         $detailPageUrl=str_replace("#brand#", $ar_fields["PROPERTY_BRAND_CODE"], $eid["DETAIL_PAGE_URL"]);
         $detailPageUrl=str_replace("#collection#", $ar_fields["PROPERTY_COLLECTION_CODE"], $detailPageUrl);
         $arResult["ASSOCIATED"][]=array(
             "url"=>$detailPageUrl,
-            "pic"=>CFile::GetPath($eid["DETAIL_PICTURE"])
+            "pic"=>CFile::GetPath($eid["DETAIL_PICTURE"]),
+            "name"=>$ar_fields["NAME"],
+            "brand"=>$ar_fields["PROPERTY_BRAND_NAME"],
+            "artnumber"=>$ar_fields["PROPERTY_ARTNUMBER_VALUE"],
+            "price"=>substr($ar_fields["CATALOG_PRICE_1"], 0, -3)
         );
     }
 }

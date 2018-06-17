@@ -95,6 +95,21 @@ $(document).ready(function () {
         location.href=href;
     });
 
+    //кнопка Купить
+    $('.dd-profile__info-buy-btn').click(function () {
+        var id=$(this).children('span#buy-action').data('id');
+        var quantity=$('#quantity').val();
+        console.log(id, quantity);
+        $.ajax({
+            type: 'POST',
+            url: '/local/templates/new-decor-delux/components/bitrix/catalog.element/decor/ajax.php',
+            data: {id: id, quantity:quantity},
+            success: function () {
+                popupText= 'Товар успешно добавлен в карзину' ;
+                popupOpen();
+            }
+        });
+    });
 
 });
 var popupText=''; //содержимое текстового popup

@@ -3,13 +3,13 @@ require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");?>
 <section class="dd-breadcrumbs container">
     <?$APPLICATION->IncludeComponent(
         "bitrix:catalog.element",
-        "",
+        "decor",
         Array(
             "ACTION_VARIABLE" => "action",
             "ADD_DETAIL_TO_SLIDER" => "N",
             "ADD_ELEMENT_CHAIN" => "N",
             "ADD_PICT_PROP" => "-",
-            "ADD_PROPERTIES_TO_BASKET" => "Y",
+            "ADD_PROPERTIES_TO_BASKET" => "N",
             "ADD_SECTIONS_CHAIN" => "Y",
             "ADD_TO_BASKET_ACTION" => array("BUY"),
             "ADD_TO_BASKET_ACTION_PRIMARY" => array("BUY"),
@@ -129,153 +129,5 @@ require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");?>
             "VOTE_DISPLAY_AS_RATING" => "rating"
         )
     );?>
-    <?/*?>
-    <a class="dd-breadcrumbs__link" href="">Главная</a>
-    &nbsp>&nbsp
-    <a class="dd-breadcrumbs__link" href="">Категория</a>
-    &nbsp>&nbsp
-    <span class="dd-breadcrumbs__link">Страница</span>
-</section>
-<section class="dd-profile container">
-    <div class="row">
-        <div class="dd-profile__slider col-12 col-sm-6">
-            <h3 class="d-block d-sm-none">Lorem ipsum dolor sit amet ipsum dolor sit amet</h3>
-            <div class="dd-profile__slider-main">
-                <img class="img-fluid" src="<?=SITE_TEMPLATE_PATH?>/images/example/profile.jpg">
-                <img class="img-fluid" src="<?=SITE_TEMPLATE_PATH?>/images/example/profile.jpg">
-                <img class="img-fluid" src="<?=SITE_TEMPLATE_PATH?>/images/example/profile.jpg">
-                <img class="img-fluid" src="<?=SITE_TEMPLATE_PATH?>/images/example/profile.jpg">
-            </div>
-            <div class="dd-profile__slider-nav">
-                <div class="dd-profile__slider-nav-item">
-                    <img src="<?=SITE_TEMPLATE_PATH?>/images/example/profile.jpg">
-                </div>
-                <div class="dd-profile__slider-nav-item">
-                    <img src="<?=SITE_TEMPLATE_PATH?>/images/example/profile.jpg">
-                </div>
-                <div class="dd-profile__slider-nav-item">
-                    <img src="<?=SITE_TEMPLATE_PATH?>/images/example/profile.jpg">
-                </div>
-                <div class="dd-profile__slider-nav-item">
-                    <img src="<?=SITE_TEMPLATE_PATH?>/images/example/profile.jpg">
-                </div>
-            </div>
-        </div>
-        <div class="dd-profile__info col-12 col-sm-6">
-            <h3 class="d-none d-sm-block">НАИМЕНОВАНИЕ ТОВАРА</h3>
-            <div class="dd-profile__info-brief">
-                <span>Бренд - Lorem ipsum</span>
-                <span>Коллекция - Lorem ipsum</span>
-                <span>Артикул № 11111111</span>
-            </div>
-            <div class="dd-profile__info-buy">
-                <div class="dd-profile__info-buy-price">1250 Р</div>
-                <div class="dd-profile__info-buy-count">
-                    <div class="dd-profile__info-buy-count-btn _minus">&minus;</div>
-                    <input type="text" class="dd-profile__info-buy-count-value" value="100">
-                    <div class="dd-profile__info-buy-count-btn _plus">+</div>
-                </div>
-                <button class="dd-profile__info-buy-btn">
-                    <span class="d-none d-sm-block">Купить</span>
-                    <img class="d-block d-sm-none" src="<?=SITE_TEMPLATE_PATH?>/images/profile-cart.png">
-                </button>
-            </div>
-            <div class="dd-profile__info-social">
-                <a href="">
-                    <img class="img-fluid" src="<?=SITE_TEMPLATE_PATH?>/images/social-vk.png">
-                </a>
-                <a href="">
-                    <img class="img-fluid" src="<?=SITE_TEMPLATE_PATH?>/images/social-instagram.png">
-                </a>
-                <a href="">
-                    <img class="img-fluid" src="<?=SITE_TEMPLATE_PATH?>/images/social-fb.png">
-                </a>
-            </div>
-            <div class="dd-profile__info-variant">
-                <div class="dd-profile__info-variant-title">Другие цвета</div>
-                <div class="dd-profile__info-variant-slider row">
-                    <div class="dd-profile__info-variant-slider-item _active">
-                        <div class="dd-profile__info-variant-slider-item-inner">
-                            <img src="<?=SITE_TEMPLATE_PATH?>/images/example/profile.jpg">
-                        </div>
-                    </div>
-                    <div class="dd-profile__info-variant-slider-item _active">
-                        <div class="dd-profile__info-variant-slider-item-inner">
-                            <img src="<?=SITE_TEMPLATE_PATH?>/images/example/profile.jpg">
-                        </div>
-                    </div>
-                    <div class="dd-profile__info-variant-slider-item _active">
-                        <div class="dd-profile__info-variant-slider-item-inner">
-                            <img src="<?=SITE_TEMPLATE_PATH?>/images/example/profile.jpg">
-                        </div>
-                    </div>
-                    <div class="dd-profile__info-variant-slider-item _active">
-                        <div class="dd-profile__info-variant-slider-item-inner">
-                            <img src="<?=SITE_TEMPLATE_PATH?>/images/example/profile.jpg">
-                        </div>
-                    </div>
-                    <div class="dd-profile__info-variant-slider-item _active">
-                        <div class="dd-profile__info-variant-slider-item-inner">
-                            <img src="<?=SITE_TEMPLATE_PATH?>/images/example/profile.jpg">
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="dd-profile__info-desc">
-                <div class="dd-profile__info-desc-title">ПОДРОБНЕЕ</div>
-                <p class="dd-profile__info-desc-text">
-                    Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi.
-                    Lorem ipsum dolor sit amet, cons ectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore
-                </p>
-                <table class="dd-profile__info-desc-params">
-                    <tr>
-                        <th>Бренд</th>
-                        <td>DID</td>
-                    </tr>
-                    <tr>
-                        <th>Коллекция</th>
-                        <td>RELIEVO</td>
-                    </tr>
-                    <tr>
-                        <th>Бренд</th>
-                        <td>DID</td>
-                    </tr>
-                    <tr>
-                        <th>Коллекция</th>
-                        <td>RELIEVO</td>
-                    </tr>
-                    <tr>
-                        <th>Бренд</th>
-                        <td>DID</td>
-                    </tr>
-                    <tr>
-                        <th>Коллекция</th>
-                        <td>RELIEVO</td>
-                    </tr>
-                    <tr>
-                        <th>Бренд</th>
-                        <td>DID</td>
-                    </tr>
-                    <tr>
-                        <th>Коллекция</th>
-                        <td>RELIEVO</td>
-                    </tr>
-                </table>
-            </div>
-        </div>
-    </div>
-
-    <div class="dd-profile__products">
-        <div class="dd-profile__products-title">
-            Рекомендуем также
-        </div>
-        <div class="dd-catalog__list-wrap row">
-<!--            --><?// include '../src/templates/list-item.blade.php' ?>
-<!--            --><?// include '../src/templates/list-item.blade.php' ?>
-<!--            --><?// include '../src/templates/list-item.blade.php' ?>
-<!--            --><?// include '../src/templates/list-item.blade.php' ?>
-        </div>
-    </div>
-    <?*/?>
 </section>
 <?require($_SERVER["DOCUMENT_ROOT"]."/bitrix/footer.php");?>
