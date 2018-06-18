@@ -29,6 +29,18 @@ $arUrlRewrite = array(
         "RULE" => "section=\$1",
         "ID" => "",
         "PATH" => "/lepnina/index.php",
+    ),
+    array(
+        "CONDITION" => "#^/tekstil/(.*)/(.*)/(.*)#",
+        "RULE" => "section=\$1&item=\$2",
+        "ID" => "",
+        "PATH" => "/tekstil/detail.php",
+    ),
+    array(
+        "CONDITION" => "#^/tekstil/(.*)/(.*)#",
+        "RULE" => "section=\$1",
+        "ID" => "",
+        "PATH" => "/tekstil/index.php",
     )
 );
 
