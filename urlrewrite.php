@@ -17,6 +17,18 @@ $arUrlRewrite = array(
         "RULE" => "brand=\$1",
         "ID" => "",
         "PATH" => "/oboi/index.php",
+    ),
+    array(
+        "CONDITION" => "#^/lepnina/(.*)/(.*)/(.*)#",
+        "RULE" => "section=\$1&item=\$2",
+        "ID" => "",
+        "PATH" => "/lepnina/detail.php",
+    ),
+    array(
+        "CONDITION" => "#^/lepnina/(.*)/(.*)#",
+        "RULE" => "section=\$1",
+        "ID" => "",
+        "PATH" => "/lepnina/index.php",
     )
 );
 
