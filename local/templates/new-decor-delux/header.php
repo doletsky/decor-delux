@@ -22,8 +22,6 @@
         <div class="dd-header-top__info d-none d-sm-block">
             <img class="dd-header-top__info-icon-call" src="/local/templates/new-decor-delux/images/phone.png">
             <span class="dd-header-top__info-phone"><?$APPLICATION->IncludeComponent("bitrix:main.include", "", array("AREA_FILE_SHOW" => "file", "PATH" => SITE_DIR."local/include/phone.php"), false);?></span>
-            <img class="dd-header-top__info-icon-geo" src="/local/templates/new-decor-delux/images/geo.png">
-            <span class="dd-header-top__info-city">Москва</span>
         </div>
         <div class="dd-header-top__tools">
             <?$APPLICATION->IncludeComponent("bitrix:search.form","in_header",Array(
@@ -31,9 +29,6 @@
                     "PAGE" => "/search/"
                 )
             );?>
-            <a class="dd-header-top__tools-enter" href="">
-                <img src="/local/templates/new-decor-delux/images/enter.png">
-            </a>
             <a class="dd-header-top__tools-cart" href="/basket/">
                 <img src="/local/templates/new-decor-delux/images/cart.png">
             </a>
