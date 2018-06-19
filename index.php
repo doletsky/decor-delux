@@ -41,7 +41,7 @@ $APPLICATION->SetTitle("Интернет-магазин обоев и краск
                 "CACHE_TYPE" => "N",
                 "CACHE_TIME" => "3600",
                 "CACHE_FILTER" => "Y",
-                "CACHE_GROUPS" => "Y",
+                "CACHE_GROUPS" => "N",
                 "DISPLAY_TOP_PAGER" => "N",
                 "DISPLAY_BOTTOM_PAGER" => "N",
                 "PAGER_TITLE" => "Новости",
@@ -145,7 +145,7 @@ $APPLICATION->SetTitle("Интернет-магазин обоев и краск
                 "CACHE_TYPE" => "N",
                 "CACHE_TIME" => "3600",
                 "CACHE_FILTER" => "Y",
-                "CACHE_GROUPS" => "Y",
+                "CACHE_GROUPS" => "N",
                 "DISPLAY_TOP_PAGER" => "N",
                 "DISPLAY_BOTTOM_PAGER" => "N",
                 "PAGER_TITLE" => "Новости",
@@ -189,7 +189,7 @@ $APPLICATION->SetTitle("Интернет-магазин обоев и краск
                 "RAND_NUMBER" => rand(1, 20), //в кеш 20 случайных наборов
                 "CACHE_TYPE" => "N",
                 "CACHE_TIME" => "300",
-                "CACHE_GROUPS" => "Y"
+                "CACHE_GROUPS" => "N"
             )
         );?>
     </section>

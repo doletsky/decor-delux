@@ -20,7 +20,7 @@ require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");?>
             "BRAND_PROP_CODE" => array("BRAND_REF", ""),
             "BRAND_USE" => "N",
             "BROWSER_TITLE" => "-",
-            "CACHE_GROUPS" => "Y",
+            "CACHE_GROUPS" => "N",
             "CACHE_TIME" => "36000000",
             "CACHE_TYPE" => "N",
             "CHECK_SECTION_ID_VARIABLE" => "N",

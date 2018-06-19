@@ -43,7 +43,7 @@ $APPLICATION->SetTitle("Обои");
             "BRAND_PROPERTY" => "BRAND_REF",
             "BROWSER_TITLE" => "",
             "CACHE_FILTER" => "N",
-            "CACHE_GROUPS" => "Y",
+            "CACHE_GROUPS" => "N",
             "CACHE_TIME" => "36000000",
             "CACHE_TYPE" => "N",
             "COMPATIBLE_MODE" => "Y",

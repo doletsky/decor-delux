@@ -41,7 +41,7 @@ require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");?>
             "GROUP_PERMISSIONS" => Array(),
             "CACHE_TYPE" => "N",
             "CACHE_TIME" => "3600",
-            "CACHE_GROUPS" => "Y",
+            "CACHE_GROUPS" => "N",
             "DISPLAY_TOP_PAGER" => "Y",
             "DISPLAY_BOTTOM_PAGER" => "Y",
             "PAGER_TITLE" => "Страница",

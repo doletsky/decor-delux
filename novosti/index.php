@@ -40,7 +40,7 @@ $APPLICATION->SetTitle("Обои");
                     "CACHE_TYPE" => "N",
                     "CACHE_TIME" => "3600",
                     "CACHE_FILTER" => "Y",
-                    "CACHE_GROUPS" => "Y",
+                    "CACHE_GROUPS" => "N",
                     "DISPLAY_TOP_PAGER" => "N",
                     "DISPLAY_BOTTOM_PAGER" => "Y",
                     "PAGER_TITLE" => "Новости",
