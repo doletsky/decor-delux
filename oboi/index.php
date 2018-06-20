@@ -254,6 +254,13 @@ $APPLICATION->SetTitle("Обои");
 
     </section>
 <?endif?>
+<?
+if(isset($_REQUEST["brand"]) || isset($_REQUEST["collection"] )){
+    $_GET["arrFilter_".$_GET["SF_PROP_ID"]."_".$_GET["SF_PROP_VAL"]]="Y";//$_GET["SF_PROP_ID"] & $_GET["SF_PROP_VAL"] формируются в news.detail brand result_modifier.php
+    $_GET["set_filter"]="Показать";
+}
+
+?>
     <section class="dd-catalog container">
         <div class="row">
             <div class="col-12 col-sm-2">

@@ -12,19 +12,7 @@
 /** @var CBitrixComponent $component */
 $this->setFrameMode(true);
 ?>
-<!--<h2>Бренды</h2>-->
-<!--<div class="dd-brands-list row">-->
-<!--    --><?//foreach($arResult["ITEMS"] as $arItem):?>
-<!--    <div class="col-4 col-sm-2">-->
-<!--        <div class="dd-brands-list__item">-->
-<!--            <a href="--><?//=$arItem["DETAIL_PAGE_URL"]?><!--">-->
-<!--                <img src="--><?//=$arItem["PREVIEW_PICTURE"]["SRC"]?><!--">-->
-<!--            </a>-->
-<!--        </div>-->
-<!--    </div>-->
-<!--    --><?//endforeach;?>
-<!--</div>-->
-<!--<pre>--><?//print_r($arResult["COLLECTION"])?><!--</pre>-->
+
 <h2>Коллекции</h2>
 <div class="row">
     <?foreach($arResult["COLLECTION"] as $arItem):?>
