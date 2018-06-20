@@ -1,9 +1,8 @@
 <?
 require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");?>
-<section class="dd-breadcrumbs container">
     <?$APPLICATION->IncludeComponent(
         "bitrix:catalog.element",
-        "decor_s",
+        "kraski",
         Array(
             "ACTION_VARIABLE" => "action",
             "ADD_DETAIL_TO_SLIDER" => "N",
@@ -41,7 +40,7 @@ require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");?>
             "FB_USE" => "Y",
             "FILE_404" => "",
             "HIDE_NOT_AVAILABLE_OFFERS" => "N",
-            "IBLOCK_ID" => "12",
+            "IBLOCK_ID" => "10",
             "IBLOCK_TYPE" => "catalog",
             "LABEL_PROP" => array("NEWPRODUCT"),
             "LABEL_PROP_MOBILE" => array(),
@@ -129,5 +128,4 @@ require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");?>
             "VOTE_DISPLAY_AS_RATING" => "rating"
         )
     );?>
-</section>
 <?require($_SERVER["DOCUMENT_ROOT"]."/bitrix/footer.php");?>
