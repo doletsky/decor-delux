@@ -47,6 +47,18 @@ $arUrlRewrite = array(
         "RULE" => "item=\$1",
         "ID" => "",
         "PATH" => "/novosti/detail.php",
+    ),
+    array(
+        "CONDITION" => "#^/kraski/(.*)/(.*)/(.*)#",
+        "RULE" => "section=\$1&item=\$2",
+        "ID" => "",
+        "PATH" => "/kraski/detail.php",
+    ),
+    array(
+        "CONDITION" => "#^/kraski/(.*)/(.*)#",
+        "RULE" => "section=\$1",
+        "ID" => "",
+        "PATH" => "/kraski/index.php",
     )
 );
 
