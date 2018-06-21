@@ -611,6 +611,28 @@
     justify-content: center
 }
 
+.dd-brands-list {
+    height: 310px;
+    overflow: hidden;
+}
+.dd-brands-list.__active {
+    height: auto;
+}
+.dd-brands-list:after {
+    content: "";
+    position: absolute;
+    width: 7px;
+    height: 13px;
+    background: url(images/catalog-arrow.png) no-repeat;
+    right: 290px;
+    top: 216%;
+    transform: translateY(-50%)
+}
+
+.dd-brands-list.__active:after   {
+    transform: translateY(-50%) rotate(-90deg)
+}
+
 .dd-brands-list__item {
     display: flex;
     align-items: center;

@@ -162,6 +162,10 @@ $(document).ready(function () {
         $('#price').html($('#price').attr('data-price-'+classSelectedS.trim())+' Р');
     });
 
+    $('.dd-brands-list').on('click', function(e){
+        let $elem = $(e.currentTarget);
+        $elem.toggleClass('__active');
+    });
 
 });
 var popupText=''; //содержимое текстового popup
