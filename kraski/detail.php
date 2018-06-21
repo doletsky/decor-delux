@@ -6,7 +6,7 @@ require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");?>
         Array(
             "ACTION_VARIABLE" => "action",
             "ADD_DETAIL_TO_SLIDER" => "N",
-            "ADD_ELEMENT_CHAIN" => "N",
+            "ADD_ELEMENT_CHAIN" => "Y",
             "ADD_PICT_PROP" => "-",
             "ADD_PROPERTIES_TO_BASKET" => "N",
             "ADD_SECTIONS_CHAIN" => "Y",

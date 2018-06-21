@@ -58,3 +58,12 @@
         )
     );?>
 
+<section class="dd-breadcrumbs container">
+    <?$APPLICATION->IncludeComponent("bitrix:breadcrumb","",Array(
+            "START_FROM" => "0",
+            "PATH" => "",
+            "SITE_ID" => "s1"
+        )
+    );?>
+</section>
+

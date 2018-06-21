@@ -3,13 +3,6 @@ require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
 $APPLICATION->SetTitle("Краски");
 
 ?>
-    <section class="dd-breadcrumbs container">
-        <a class="dd-breadcrumbs__link" href="">Главная</a>
-        &nbsp>&nbsp
-        <a class="dd-breadcrumbs__link" href="">Категория</a>
-        &nbsp>&nbsp
-        <span class="dd-breadcrumbs__link">Страница</span>
-    </section>
             <?
             $SECTION="";if(isset($_REQUEST["section"]))$SECTION=$_REQUEST["section"];
             $SORT_ORDER='asc';
@@ -68,7 +61,7 @@ $APPLICATION->SetTitle("Краски");
                 "SET_META_DESCRIPTION" => "N",
                 "SET_LAST_MODIFIED" => "N",
                 "INCLUDE_IBLOCK_INTO_CHAIN" => "N",
-                "ADD_SECTIONS_CHAIN" => "N",
+                "ADD_SECTIONS_CHAIN" => "Y",
                 "HIDE_LINK_WHEN_NO_DETAIL" => "Y",
                 "PARENT_SECTION" => "",
                 "PARENT_SECTION_CODE" => "",

@@ -3,13 +3,6 @@ require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
 $APPLICATION->SetTitle("Обои");
 
 ?>
-    <section class="dd-breadcrumbs container">
-        <a class="dd-breadcrumbs__link" href="">Главная</a>
-        &nbsp>&nbsp
-        <a class="dd-breadcrumbs__link" href="">Категория</a>
-        &nbsp>&nbsp
-        <span class="dd-breadcrumbs__link">Страница</span>
-    </section>
             <?
             $SECTION="";if(isset($_REQUEST["section"]))$SECTION=$_REQUEST["section"];
             $SORT_ORDER='asc';
@@ -31,7 +24,7 @@ $APPLICATION->SetTitle("Обои");
             "ACTION_VARIABLE" => "action",
             "ADD_PICT_PROP" => "MORE_PHOTO",
             "ADD_PROPERTIES_TO_BASKET" => "Y",
-            "ADD_SECTIONS_CHAIN" => "N",
+            "ADD_SECTIONS_CHAIN" => "Y",
             "ADD_TO_BASKET_ACTION" => "ADD",
             "AJAX_MODE" => "N",
             "AJAX_OPTION_ADDITIONAL" => "",
