@@ -53,19 +53,16 @@ $this->setFrameMode(true);
             <?
         }
         ?>
-        <div class="row">
-            <div class="col-xs-12 bx-filter-button-box">
-                <div class="bx-filter-block">
-                    <div class="bx-filter-parameters-box-container">
-                        <input
-                                class="btn btn-themes"
+            <div class="dd-catalog__filter-header d-none d-sm-block">
+                        <input style="border:  0;font-size:  80%;line-height: 2em;cursor: pointer"
                                 type="submit"
                                 id="set_filter"
                                 name="set_filter"
                                 value="<?=GetMessage("CT_BCSF_SET_FILTER")?>"
                         />
-                        <input
-                                class="btn btn-link"
+            </div>
+            <div class="dd-catalog__filter-header d-none d-sm-block">
+                        <input style="border:  0;font-size:  80%;line-height: 2em;cursor: pointer"
                                 type="submit"
                                 id="del_filter"
                                 name="del_filter"
@@ -77,20 +74,6 @@ $this->setFrameMode(true);
                             <br/>
                             <a href="<?echo $arResult["FILTER_URL"]?>" target=""><?echo GetMessage("CT_BCSF_FILTER_SHOW")?></a>
                         </div>
-                    </div>
-                </div>
             </div>
-        </div>
         <div class="clb"></div>
         </form>
-
-<!--                <li class="dd-catalog__filter-item-link _hidden">-->
-<!--                    <input type="checkbox" id="mark-1-10">-->
-<!--                    <label for="mark-1-10">Architects Paper <span class="_count">(118)</span></label>-->
-<!--                </li>-->
-<!--                <li class="dd-catalog__filter-item-link">-->
-<!--                                    <span class="dd-catalog__filter-item-more">-->
-<!--                                        <img src="--><?//=SITE_TEMPLATE_PATH?><!--/images/catalog-arrow.png">Еще <span class="_count">(15)</span>-->
-<!--                                    </span>-->
-<!--                </li>-->
-            
