@@ -86,7 +86,7 @@ require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");?>
             "PRODUCT_PROPS_VARIABLE" => "prop",
             "PRODUCT_QUANTITY_VARIABLE" => "",
             "PRODUCT_SUBSCRIPTION" => "Y",
-            "PROPERTY_CODE" => array(),
+            "PROPERTY_CODE" => array("COMPANION"),
             "RELATIVE_QUANTITY_FACTOR" => "5",
             "SECTION_CODE" => "",
             "SECTION_CODE_PATH" => "",
