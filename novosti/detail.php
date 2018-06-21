@@ -33,7 +33,7 @@ require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");?>
             "META_DESCRIPTION" => "-",
             "SET_STATUS_404" => "Y",
             "SET_LAST_MODIFIED" => "Y",
-            "INCLUDE_IBLOCK_INTO_CHAIN" => "N",
+            "INCLUDE_IBLOCK_INTO_CHAIN" => "Y",
             "ADD_SECTIONS_CHAIN" => "N",
             "ADD_ELEMENT_CHAIN" => "Y",
             "ACTIVE_DATE_FORMAT" => "d.m.Y",

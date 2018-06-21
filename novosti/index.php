@@ -1,6 +1,6 @@
 <?
 require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
-$APPLICATION->SetTitle("Обои");
+$APPLICATION->SetTitle("Новости");
 
 ?>
     <section class="dd-news container">
@@ -31,7 +31,7 @@ $APPLICATION->SetTitle("Обои");
                     "SET_META_KEYWORDS" => "N",
                     "SET_META_DESCRIPTION" => "N",
                     "SET_LAST_MODIFIED" => "N",
-                    "INCLUDE_IBLOCK_INTO_CHAIN" => "N",
+                    "INCLUDE_IBLOCK_INTO_CHAIN" => "Y",
                     "ADD_SECTIONS_CHAIN" => "N",
                     "HIDE_LINK_WHEN_NO_DETAIL" => "Y",
                     "PARENT_SECTION" => "",
