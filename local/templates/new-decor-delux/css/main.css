@@ -2087,3 +2087,15 @@ p {
     max-width: 500px;
     margin: 20px auto;
 }
+.border-t {
+    border-top: 1px solid grey;
+}
+.border-b {
+    border-bottom: 1px solid grey;
+}
+.border-l {
+    border-left: 1px solid grey;
+}
+.border-r {
+    border-right: 1px solid grey;
+}

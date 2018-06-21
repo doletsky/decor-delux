@@ -3,8 +3,7 @@
         <div class="row">
             <div class="dd-profile__slider col-12 col-sm-5">
                 <h3 class="d-block d-sm-none"><?=$arResult['NAME']?></h3>
-                <div class="dd-profile__slider-main">
-                    <img class="img-fluid" src="<?=$arResult['DETAIL_PICTURE']['SRC']?>">
+                <div class="dd-profile__slider-main" style="background-image: url('<?=$arResult['DETAIL_PICTURE']['SRC']?>')">
                     <?if(isset($arResult["GALLERY_PATH"])):?>
                         <?foreach ($arResult["GALLERY_PATH"] as $src):?>
                             <img class="img-fluid" src="<?=$src?>">
@@ -12,13 +11,10 @@
                     <?endif?>
                 </div>
                 <div class="dd-profile__slider-nav">
-                    <div class="dd-profile__slider-nav-item">
-                        <img src="<?=$arResult['DETAIL_PICTURE']['SRC']?>">
-                    </div>
                     <?if(isset($arResult["GALLERY_PATH"])):?>
                         <?foreach ($arResult["GALLERY_PATH"] as $src):?>
                             <div class="dd-profile__slider-nav-item">
-                                <img src="<?=$src?>">
+                                <img src="<?=$src?>" style="background-image: url('<?=$arResult['DETAIL_PICTURE']['SRC']?>')">
                             </div>
                         <?endforeach;?>
                     <?endif?>
@@ -41,19 +37,28 @@
                         </div>
                         <div class="dd-collection__list row">
                             <? foreach ($arResult["PALITRA"] as $pal): ?>
-                                <div class="col-1"><a href="<?=$pal["DETAIL_PAGE_URL"]?>" ><div id="<?=$pal['SORT']?>" class="dd-collection__list-item" style='background-image: url("<?=$pal["IMG"]?>")'></div></a></div>
+                                <div class="col-1 <?=$pal["BORDER_CLASS"]?>"><a href="<?=$pal["DETAIL_PAGE_URL"]?>" ><div class="dd-collection__list-item" style='background-image: url("<?=$pal["IMG"]?>")'></div></a></div>
                             <? endforeach; ?>
                         </div>
                     </div>
                     <div class="col-12 col-sm-4">
                         <div class="dd-profile__info-buy _vertical">
                             <div class="dd-profile__info-volume">
-                                <label>Объем банки</label>
-                                <select>
+                                <label>Тип</label><br>
+                                <select class="o_type">
                                     <option>Выбрать</option>
-                                    <option>1 л</option>
-                                    <option>2 л</option>
-                                    <option>3 л</option>
+                                    <?foreach ($arResult["SM_OFFERS"]["o_type"] as $type):?>
+                                    <option class="<?=" item_".implode(" item_", $type["ITEM_ID"])?>"><?=$type["VAL"]?></option>
+                                    <?endforeach;?>
+                                </select>
+                            </div>
+                            <div class="dd-profile__info-volume">
+                                <label>Объем банки</label>
+                                <select class="o_size" disabled>
+                                    <option>Выбрать</option>
+                                    <?foreach ($arResult["SM_OFFERS"]["o_size"] as $type):?>
+                                        <option class="<?=" item_".implode(" item_", $type["ITEM_ID"])?>" style="display: none"><?=$type["VAL"]?></option>
+                                    <?endforeach;?>
                                 </select>
                             </div>
 
@@ -61,12 +66,12 @@
                                 <label>Количество</label>
                                 <div class="dd-profile__info-buy-count">
                                     <div class="dd-profile__info-buy-count-btn _minus">&minus;</div>
-                                    <input type="text" class="dd-profile__info-buy-count-value" value="100">
+                                    <input type="text" class="dd-profile__info-buy-count-value" id="quantity" value="100">
                                     <div class="dd-profile__info-buy-count-btn _plus">+</div>
                                 </div>
-                                <div class="dd-profile__info-buy-price">1250 Р</div>
+                                <div id="price" <?=$arResult["SM_OFFERS"]["o_price"]?> class="dd-profile__info-buy-price"><?=$arResult["CATALOG_PRICE_1"]?> Р</div>
                                 <button class="dd-profile__info-buy-btn">
-                                    <span class="d-none d-sm-block">Купить</span>
+                                    <span class="d-none d-sm-block" id="buy-action" data-id="">Купить</span>
                                     <img class="d-block d-sm-none" src="<?=$path ?>public/images/profile-cart.png">
                                 </button>
                             </div>

@@ -36,36 +36,59 @@ if(is_array($arResult["DISPLAY_PROPERTIES"]["COMPANION"]["LINK_ELEMENT_VALUE"]))
         );
     }
 }
-$arResult["PAL_9"]=array(
-    $arResult["SORT"]-130=>array(),
-    $arResult["SORT"]-120=>array(),
-    $arResult["SORT"]-110=>array(),
-    $arResult["SORT"]-10=>array(),
-    $arResult["SORT"]=>array(),
-    $arResult["SORT"]+10=>array(),
-    $arResult["SORT"]+110=>array(),
-    $arResult["SORT"]+120=>array(),
-    $arResult["SORT"]+130=>array()
-);
+$arResult["PAL_9"]=array();
 $arPFilter = Array(
     "IBLOCK_ID"=>$arResult["IBLOCK_ID"],
     "ACTIVE"=>"Y"
 );
-$res = CIBlockElement::GetList(Array("SORT"=>"ASC"), $arPFilter);
+$i=0;
+$res = CIBlockElement::GetList(Array($arParams["SORT_BY1"]=>$arParams["SORT_ORDER1"],$arParams["SORT_BY2"]=>$arParams["SORT_ORDER2"]), $arPFilter);
 while($ar_fields = $res->GetNext()){
-    $arResult["PALITRA"][]=array(
+    $arResult["PALITRA"][$i]=array(
+        "ID"=>$ar_fields["ID"],
         "CODE"=>$ar_fields["CODE"],
         "SORT"=>$ar_fields["SORT"],
         "DETAIL_PAGE_URL"=>$ar_fields["DETAIL_PAGE_URL"],
-        "IMG"=>CFile::GetPath($ar_fields["DETAIL_PICTURE"])
+        "IMG"=>CFile::GetPath($ar_fields["DETAIL_PICTURE"]),
+        "NAME"=>$ar_fields["NAME"],
+        "BORDER_CLASS"=>""
     );
-    if(is_array($arResult["PAL_9"][$ar_fields["SORT"]])){
-        $arResult["PAL_9"][$ar_fields["SORT"]]=array(
-            "CODE"=>$ar_fields["CODE"],
-            "SORT"=>$ar_fields["SORT"],
-            "DETAIL_PAGE_URL"=>$ar_fields["DETAIL_PAGE_URL"],
-            "IMG"=>CFile::GetPath($ar_fields["DETAIL_PICTURE"]),
-            "NAME"=>$ar_fields["NAME"]
-        );
-    }
+    if($arResult["ID"]==$ar_fields["ID"])$iID=$i;
+    $i++;
 }
+
+if($iID<=11){
+    $iID+=12;
+}
+if($iID>=108){
+    $iID-=12;
+}
+$fl=round(12*($iID*100/1200-floor($iID*100/1200)));
+if($fl==0){
+    $iID++;
+}
+$flag=0;
+if($fl==11){
+    $iID=$iID-1;
+    $flag=1;
+}
+$arID=array($iID-13,$iID-12,$iID-11,$iID-1,$iID,$iID+1,$iID+11,$iID+12,$iID+13);
+$arBorderClass=array("border-t border-l","border-t", "border-t border-r","border-l","", "border-r", "border-b border-l", "border-b", "border-r border-b");
+foreach ($arID as $j=>$id){
+    if(isset($arResult["PALITRA"][$id])){
+        $arResult["PAL_9"][]=$arResult["PALITRA"][$id];
+        $arResult["PALITRA"][$id]["BORDER_CLASS"]=$arBorderClass[$j];
+    }
+
+}
+$arResult["log"]=array("fl"=>$fl, "flag"=>$flag, "if"=>(($fl-11)<0), "arId"=>$arID);
+
+$arOffers=array();
+foreach ($arResult["OFFERS"] as $offer){
+    $arOffers["o_type"][$offer["PROPERTIES"]["O_TYPE"]["VALUE_ENUM_ID"]]["VAL"] = $offer["PROPERTIES"]["O_TYPE"]["VALUE"];
+    $arOffers["o_type"][$offer["PROPERTIES"]["O_TYPE"]["VALUE_ENUM_ID"]]["ITEM_ID"][] = $offer["ID"];
+    $arOffers["o_size"][$offer["PROPERTIES"]["O_SIZE"]["VALUE_ENUM_ID"]]["VAL"] = $offer["PROPERTIES"]["O_SIZE"]["VALUE"];
+    $arOffers["o_size"][$offer["PROPERTIES"]["O_SIZE"]["VALUE_ENUM_ID"]]["ITEM_ID"][] = $offer["ID"];
+    $arOffers["o_price"].='data-price-item_'.$offer["ID"].'="'.substr($offer["CATALOG_PRICE_1"],0,-3).'" ';
+}
+$arResult["SM_OFFERS"]=$arOffers;

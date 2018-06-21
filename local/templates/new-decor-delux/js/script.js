@@ -97,7 +97,8 @@ $(document).ready(function () {
 
     //кнопка Купить
     $('.dd-profile__info-buy-btn').click(function () {
-        var id=$(this).children('span#buy-action').data('id');
+        var id=$(this).children('span#buy-action').attr('data-id');
+        if(!id || id.length<=0) return false;
         var quantity=$('#quantity').val();
         $.ajax({
             type: 'POST',
@@ -128,6 +129,40 @@ $(document).ready(function () {
         });
     });
 
+    //краски: выбор типа и объема
+    $(".o_type").on('change',function () {
+        var optionSelected = $("option:selected", this);
+        var classSelected = $(optionSelected).attr('class');
+        $(".o_size option").css('display','none');
+        $(".o_size").prop('selectedIndex', 0);
+        $(".o_size").attr('disabled', true);
+        $('#buy-action').attr('data-id', '');
+        $('#price').html('');
+        if(!classSelected) {
+            return false;
+        }
+        var arItems=classSelected.split(" ");
+        for(var i in arItems){
+            if(arItems[i].length>5)
+                $(".o_size option."+arItems[i]).css('display', 'block');
+        }
+
+        $(".o_size").removeAttr('disabled');
+    });
+    $(".o_size").on('change',function () {
+        var optionSelectedS = $("option:selected", this);
+        var classSelectedS = $(optionSelectedS).attr('class');
+        $('#buy-action').attr('data-id', '');
+        $('#price').html('');
+        if(!classSelectedS) {
+            return false;
+        }
+        var arId=classSelectedS.split("_");
+        $('#buy-action').attr('data-id', arId[1]);
+        $('#price').html($('#price').attr('data-price-'+classSelectedS.trim())+' Р');
+    });
+
+
 });
 var popupText=''; //содержимое текстового popup
 
@@ -143,4 +178,9 @@ function popupOpen() {
         }
     });
     popupText='';
+}
+
+function trim()
+{
+    return this.replace(/^\s+|\s+$/g, '');
 }
