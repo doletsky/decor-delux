@@ -10,7 +10,14 @@ $(document).ready(function () {
     $('.dd-callback button').click(function (e) {
         e.preventDefault();
         if($('#phone').val().length==17){
-            popupOpen();
+            $.ajax({
+                type: "POST",
+                url: "/local/include/send_callback.php",
+                data: "phone"+$('#callback').find('input#phone').val(),
+                success: function(msg){
+                    popupOpen();
+                }
+            });
         }else{
             popupText='';
         }
@@ -26,8 +33,9 @@ $(document).ready(function () {
             popupOpen();
             return false;
         }
+        var form_sf=$(this).parents('form#sf');
         var param='';
-        $('form#sf input').each(function () {
+        form_sf.find('input').each(function () {
             param+='&'+$(this).attr('name')+'='+$(this).val();
         });
         $.ajax({

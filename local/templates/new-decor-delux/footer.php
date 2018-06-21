@@ -34,7 +34,7 @@
 <!--                    <script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3Acabd6280e34890eb655a2550008d600d4c7822a1526ca8abbaca13442788284a&amp;width=100%&amp;height=315&amp;lang=ru_RU&amp;scroll=true"></script>-->
                 </div>
                 <div class="dd-footer__forms col-12 col-sm-4">
-                    <form class="dd-callback form-inline" style="margin-bottom: 1em;">
+                    <form id="callback" class="dd-callback form-inline" style="margin-bottom: 1em;">
                         <div class="form-group">
                             <input id="phone" type="text" class="form-control-plaintext" value="">
                             <button type="submit" onclick="return false" class="btn btn-primary">Заказать звонок</button>

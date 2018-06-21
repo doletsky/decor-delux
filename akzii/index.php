@@ -62,20 +62,14 @@ $APPLICATION->SetTitle("Обои");
                 )
             );?>
 
-            <div class="col-12 col-sm-3">
-                <div class="dd-subscribe">
-                    <div class="dd-subscribe__title">
-                        <img src="<?=SITE_TEMPLATE_PATH?>/images/subscribe-blue.png">
-                        <span class="dd-subscribe__title-text">подписаться<br>на наши новости</span>
-                    </div>
-                    <form class="form">
-                        <div class="form-group">
-                            <input type="text" class="form-control-plaintext" value="email">
-                            <button type="submit" class="btn btn-primary">Подписаться</button>
-                        </div>
-                    </form>
-                </div>
-            </div>
+            <?$APPLICATION->IncludeComponent("bitrix:subscribe.form","add",Array(
+                    "USE_PERSONALIZATION" => "Y",
+                    "PAGE" => "/",
+                    "SHOW_HIDDEN" => "Y",
+                    "CACHE_TYPE" => "A",
+                    "CACHE_TIME" => "3600"
+                )
+            );?>
 
         </div>
     </section>
