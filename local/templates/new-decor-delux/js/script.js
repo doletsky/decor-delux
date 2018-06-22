@@ -175,6 +175,40 @@ $(document).ready(function () {
         $elem.toggleClass('__active');
     });
 
+    //share fb
+    // FB.init({
+    //     appId      : '522962684704330',
+    //     status     : true,
+    //     xfbml      : true,
+    //     version    : 'v2.7' // or v2.6, v2.5, v2.4, v2.3
+    // });
+    $('.dd-social__item._facebook').click(function (e) {
+        e.preventDefault();
+        window.open('https://www.facebook.com/sharer.php?u='+location.href);
+
+        // FB.ui({
+        //     method: 'share',
+        //     display: 'popup',
+        //     href: location.href,
+        // }, function(response){
+        //     console.log(response);
+        // });
+
+    });
+    //share vk
+    $('.dd-social__item._vk').click(function (e) {
+        e.preventDefault();
+        window.open('https://vk.com/share.php?url='+location.href+'&title='+$('meta[property="og:title"]').attr('content')+'&image='+$('meta[property="og:image"]').attr('content'));
+    });
+    //share pin
+    $('.dd-social__item._pinterest').click(function (e) {
+        e.preventDefault();
+        var p_url=location.href;
+        var p_img=$('meta[property="og:image"]').attr('content');
+        var p_title=$('meta[property="og:title"]').attr('content');
+        window.open('https://ru.pinterest.com/pin/create/button/?url='+p_url+'&media='+p_img+'&description='+p_title);
+    });
+
 });
 var popupText=''; //содержимое текстового popup
 

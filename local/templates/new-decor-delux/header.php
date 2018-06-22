@@ -8,7 +8,6 @@
     <meta property="og:type"          content="website" />
     <meta property="og:title"         content="<?=$APPLICATION->ShowTitle()?>" />
     <meta property="og:description"   content="<?$APPLICATION->ShowProperty("description")?>" />
-    <meta property="og:image"         content="<?$APPLICATION->ShowProperty("image")?>" />
     <link href="<?=SITE_TEMPLATE_PATH?>/css/main.css?10" rel="stylesheet">
     <link href="<?=SITE_TEMPLATE_PATH?>/css/magnific-popup.css" rel="stylesheet">
     <?$APPLICATION->ShowHead();?>

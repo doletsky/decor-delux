@@ -10,13 +10,13 @@
 /** @var string $templateFolder */
 /** @var string $componentPath */
 /** @var CBitrixComponent $component */
-$this->setFrameMode(true);
 ?>
+
 <div class="col-12 col-sm-9">
     <?if(is_array($arResult["DETAIL_PICTURE"])):?>
-    <img class="img-fluid d-block d-sm-none" src="<?=$path ?>public/images/example/newspage.jpg">
+    <img class="img-fluid d-block d-sm-none" src="<?=$arResult["DETAIL_PICTURE"]["SRC"]?>">
     <?else:?>
-    <img class="img-fluid d-block d-sm-none" src="<?=$path ?>public/images/example/newspage.jpg">
+    <img class="img-fluid d-block d-sm-none" src="<?=$arResult["PREVIEW_PICTURE"]["SRC"]?>">
     <?endif;?>
     <h3><?echo $arResult["NAME"];?></h3>
     <div class="dd-news__info">

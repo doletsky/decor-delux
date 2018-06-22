@@ -69,6 +69,9 @@
 <script type="text/javascript" src="/local/templates/new-decor-delux/js/slick.min.js"></script>
 <script type="text/javascript" src="/local/templates/new-decor-delux/js/main.js"></script>
 <script type="text/javascript" src="/local/templates/new-decor-delux/js/script.js"></script>
+<script type="text/javascript" src="https://connect.facebook.net/en_US/sdk.js"></script>
+<script type="text/javascript" src="https://vk.com/js/api/share.js?93" charset="windows-1251"></script>
+<script async defer src="//assets.pinterest.com/js/pinit.js"></script>
 
 
     </body>
