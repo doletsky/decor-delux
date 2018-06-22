@@ -47,13 +47,13 @@
                 </button>
             </div>
             <div class="dd-profile__info-social">
-                <a href="">
+                <a class="share_vk" href="">
                     <img class="img-fluid" src="<?=SITE_TEMPLATE_PATH?>/images/social-vk.png">
                 </a>
                 <a href="">
                     <img class="img-fluid" src="<?=SITE_TEMPLATE_PATH?>/images/social-instagram.png">
                 </a>
-                <a href="">
+                <a class="share_fb" href="">
                     <img class="img-fluid" src="<?=SITE_TEMPLATE_PATH?>/images/social-fb.png">
                 </a>
             </div>

@@ -92,3 +92,15 @@ foreach ($arResult["OFFERS"] as $offer){
     $arOffers["o_price"].='data-price-item_'.$offer["ID"].'="'.substr($offer["CATALOG_PRICE_1"],0,-3).'" ';
 }
 $arResult["SM_OFFERS"]=$arOffers;
+$cp = $this->__component;
+if (is_object($cp))
+{
+    if(is_array($arResult["DETAIL_PICTURE"])){
+        $cp->arResult['og_image'] = 'http://'.$_SERVER['HTTP_HOST'].$arResult["DETAIL_PICTURE"]["SRC"];
+    }else{
+        $cp->arResult['og_image'] = 'http://'.$_SERVER['HTTP_HOST'].$arResult["PREVIEW_PICTURE"]["SRC"];
+    }
+    // сохраним их в копии arResult, с которой работает шаблон
+    $cp->SetResultCacheKeys(array('og_image'));
+    $arResult['og_image'] = $cp->arResult['og_image'];
+}

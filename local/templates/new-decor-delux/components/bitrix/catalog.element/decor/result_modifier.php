@@ -7,6 +7,7 @@
 
 $component = $this->getComponent();
 $arParams = $component->applyTemplateModifications();
+
 $arResult["BRAND_NAME"]=$arResult["DISPLAY_PROPERTIES"]["brand"]["LINK_ELEMENT_VALUE"][$arResult["DISPLAY_PROPERTIES"]["brand"]["VALUE"]]["NAME"];
 $arResult["COLLECTION_NAME"]=$arResult["DISPLAY_PROPERTIES"]["collection"]["LINK_ELEMENT_VALUE"][$arResult["DISPLAY_PROPERTIES"]["collection"]["VALUE"]]["NAME"];
 $arResult["ARTNUMBER_VALUE"]=$arResult["DISPLAY_PROPERTIES"]["ARTNUMBER"]["VALUE"];
@@ -78,4 +79,17 @@ foreach ($arResult["PROPERTIES"] as $props){
         $arResult["SMART_FILTER"][$props["ID"]]["VALUE"]=$props["VALUE"];
         $arResult["SMART_FILTER"][$props["ID"]]["PROPERTY_TYPE"]=$props["PROPERTY_TYPE"];
     }
+}
+$cp = $this->__component; // объект компонента
+
+if (is_object($cp))
+{
+    if(is_array($arResult["DETAIL_PICTURE"])){
+        $cp->arResult['og_image'] = 'http://'.$_SERVER['HTTP_HOST'].$arResult["DETAIL_PICTURE"]["SRC"];
+    }else{
+        $cp->arResult['og_image'] = 'http://'.$_SERVER['HTTP_HOST'].$arResult["PREVIEW_PICTURE"]["SRC"];
+    }
+    // сохраним их в копии arResult, с которой работает шаблон
+    $cp->SetResultCacheKeys(array('og_image'));
+    $arResult['og_image'] = $cp->arResult['og_image'];
 }

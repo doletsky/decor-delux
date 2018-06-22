@@ -91,17 +91,17 @@
                         </div>
 
                         <div class="dd-profile__info-social">
-                            <a href="">
-                                <img class="img-fluid" src="<?=$path ?>public/images/social-vk.png">
+                            <a class="share_vk" href="">
+                                <img class="img-fluid" src="<?=SITE_TEMPLATE_PATH?>/images/social-vk.png">
                             </a>
                             <a href="">
-                                <img class="img-fluid" src="<?=$path ?>public/images/social-instagram.png">
+                                <img class="img-fluid" src="<?=SITE_TEMPLATE_PATH?>/images/social-instagram.png">
                             </a>
-                            <a href="">
-                                <img class="img-fluid" src="<?=$path ?>public/images/social-fb.png">
+                            <a class="share_fb" href="">
+                                <img class="img-fluid" src="<?=SITE_TEMPLATE_PATH?>/images/social-fb.png">
                             </a>
-                            <a class="d-none d-sm-block" href="">
-                                <img class="img-fluid" src="<?=$path ?>public/images/social-pinterest.png">
+                            <a class="share_pin" class="d-none d-sm-block" href="">
+                                <img class="img-fluid" src="<?=SITE_TEMPLATE_PATH?>/images/social-pinterest.png">
                             </a>
                         </div>
                     </div>

@@ -79,3 +79,15 @@ foreach ($arResult["PROPERTIES"] as $props){
         $arResult["SMART_FILTER"][$props["ID"]]["PROPERTY_TYPE"]=$props["PROPERTY_TYPE"];
     }
 }
+$cp = $this->__component;
+if (is_object($cp))
+{
+    if(is_array($arResult["DETAIL_PICTURE"])){
+        $cp->arResult['og_image'] = 'http://'.$_SERVER['HTTP_HOST'].$arResult["DETAIL_PICTURE"]["SRC"];
+    }else{
+        $cp->arResult['og_image'] = 'http://'.$_SERVER['HTTP_HOST'].$arResult["PREVIEW_PICTURE"]["SRC"];
+    }
+    // сохраним их в копии arResult, с которой работает шаблон
+    $cp->SetResultCacheKeys(array('og_image'));
+    $arResult['og_image'] = $cp->arResult['og_image'];
+}

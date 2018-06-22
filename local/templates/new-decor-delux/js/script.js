@@ -182,7 +182,7 @@ $(document).ready(function () {
     //     xfbml      : true,
     //     version    : 'v2.7' // or v2.6, v2.5, v2.4, v2.3
     // });
-    $('.dd-social__item._facebook').click(function (e) {
+    $('.dd-social__item._facebook, share_fb').click(function (e) {
         e.preventDefault();
         window.open('https://www.facebook.com/sharer.php?u='+location.href);
 
@@ -196,12 +196,12 @@ $(document).ready(function () {
 
     });
     //share vk
-    $('.dd-social__item._vk').click(function (e) {
+    $('.dd-social__item._vk, .share_vk').click(function (e) {
         e.preventDefault();
         window.open('https://vk.com/share.php?url='+location.href+'&title='+$('meta[property="og:title"]').attr('content')+'&image='+$('meta[property="og:image"]').attr('content'));
     });
     //share pin
-    $('.dd-social__item._pinterest').click(function (e) {
+    $('.dd-social__item._pinterest, .share_pin').click(function (e) {
         e.preventDefault();
         var p_url=location.href;
         var p_img=$('meta[property="og:image"]').attr('content');

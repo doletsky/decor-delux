@@ -16,7 +16,9 @@ if (isset($templateData['TEMPLATE_THEME']))
 	$APPLICATION->SetAdditionalCSS($templateFolder.'/themes/'.$templateData['TEMPLATE_THEME'].'/style.css');
 	$APPLICATION->SetAdditionalCSS('/bitrix/css/main/themes/'.$templateData['TEMPLATE_THEME'].'/style.css', true);
 }
-
+if(isset($arResult["og_image"])){
+    $APPLICATION->AddHeadString('<meta property="og:image" content="'.$arResult["og_image"].'">');
+}
 if (!empty($templateData['TEMPLATE_LIBRARY']))
 {
 	$loadCurrency = false;

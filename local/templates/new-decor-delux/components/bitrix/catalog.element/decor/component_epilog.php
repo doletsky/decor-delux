@@ -10,3 +10,6 @@ if($ar_fields_c = $res_c->GetNext()) {
     $APPLICATION->AddChainItem($ar_fields_c["NAME"], "/oboi/" . $_REQUEST["brand"] . "/" . $_REQUEST["collection"] . "/");
 }
 $APPLICATION->AddChainItem($arResult["NAME"], "");
+if(isset($arResult["og_image"])){
+    $APPLICATION->AddHeadString('<meta property="og:image" content="'.$arResult["og_image"].'">');
+}
