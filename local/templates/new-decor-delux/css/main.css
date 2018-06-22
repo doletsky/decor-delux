@@ -2121,3 +2121,15 @@ p {
 .border-r {
     border-right: 1px solid grey;
 }
+
+@media (max-width:576px){
+    .slick-prev {
+        left: 15px;
+        z-index: 999;
+    }
+    .slick-next {
+        right: 15px;
+        transform: rotate(180deg);
+        margin-top: -14px;
+    }
+}

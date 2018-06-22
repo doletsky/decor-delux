@@ -24,10 +24,22 @@ $(document).ready(function(){
         arrows: false,
         responsive: [
             {
+                breakpoint: 768,
+                settings: {
+                    slidesToShow: 2,
+                    slidesToScroll: 1,
+                    dots:false,
+                    arrows:true
+                }
+            },
+            {
                 breakpoint: mobileWidth,
                 settings: {
                     slidesToShow: 1,
-                    slidesToScroll: 1
+                    slidesToScroll: 1,
+                    dots:false,
+                    arrows:true,
+                    centerMode: true
                 }
             }
         ]
@@ -69,18 +81,30 @@ $(document).ready(function(){
     });
 
 
-    if (parseInt($(window).width()) < mobileWidth){
+    if (parseInt($(window).width()) < 768){
         let $slider2 = $('.js-slider-2');
 
-        $slider2.css('height', ((parseInt($(window).width()) - 38) / 2) + 72 + 10);
+        //((parseInt($(window).width()) - 38) / 2) + 72 + 60);
 
         $slider2.slick({
             infinite: true,
             slidesToShow: 2,
             slidesToScroll: 1,
-            dots: true,
-            arrows: false
+            dots: false,
+            arrows: true,
+            responsive: [
+                {
+                    breakpoint: 576,
+                    settings: {
+                        slidesToShow: 1,
+                        slidesToScroll: 1,
+                        centerMode: true
+                    }
+                }
+            ]
         });
+
+        $slider2.css('height', $('.js-slider-2').find('.slick-list.draggable').height());
 
         $('.dd-profile__slider-main').css('height', parseInt($(window).width()) - 30);
         $('.dd-profile__info-variant-slider').css('height', (parseInt($(window).width()) - 80) / 2 - 26);

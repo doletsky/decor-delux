@@ -14,7 +14,7 @@ $this->setFrameMode(true);
 ?>
 <div class="row m-row js-slider-2">
     <?foreach($arResult["ITEMS"] as $arItem):?>
-    <div class="dd-card col-sm-4 col-xs-12">
+    <div class="dd-card col-md-4 col-xs-12">
         <a class="dd-card__wrap" href="<?echo $arItem["DETAIL_PAGE_URL"]?>">
             <img class="dd-card__img img-fluid" src="<?if(isset($arItem["PREVIEW_PICTURE"]["SRC"])) echo $arItem["PREVIEW_PICTURE"]["SRC"]; else echo $arItem["DETAIL_PICTURE"]["SRC"];?>">
             <div class="dd-card__footer">
