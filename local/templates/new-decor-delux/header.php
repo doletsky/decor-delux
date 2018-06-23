@@ -61,7 +61,7 @@
             "EDIT_TEMPLATE" => ""
         )
     );?>
-
+<?if($APPLICATION->GetCurDir()!="/"):?>
 <section class="dd-breadcrumbs container">
     <?$APPLICATION->IncludeComponent("bitrix:breadcrumb","",Array(
             "START_FROM" => "0",
@@ -70,4 +70,4 @@
         )
     );?>
 </section>
-
+<?endif?>
