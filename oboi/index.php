@@ -286,7 +286,8 @@ if(isset($_REQUEST["brand"]) || isset($_REQUEST["collection"] )){
                         "SECTION_TITLE" => "-",
                         "SECTION_DESCRIPTION" => "-",
                         "POPUP_POSITION" => "left",
-                        "SEF_RULE" => "/examples/books/#SECTION_ID#/filter/#SMART_FILTER_PATH#/apply/",
+                        "SEF_MODE" => "Y",
+                        "SEF_RULE" => "/oboi/#SMART_FILTER_PATH#/apply/",
                         "SECTION_CODE_PATH" => "",
                         "SMART_FILTER_PATH" => $_REQUEST["SMART_FILTER_PATH"],
                         "CURRENCY_ID" => "RUB"
@@ -403,7 +404,7 @@ if(isset($_REQUEST["brand"]) || isset($_REQUEST["collection"] )){
                     "SECTION_ID_VARIABLE" => "SECTION_ID",
                     "SECTION_URL" => "",
                     "SECTION_USER_FIELDS" => array("",""),
-                    "SEF_MODE" => "N",
+                    "SEF_MODE" => "Y",
                     "SET_BROWSER_TITLE" => "Y",
                     "SET_LAST_MODIFIED" => "N",
                     "SET_META_DESCRIPTION" => "N",

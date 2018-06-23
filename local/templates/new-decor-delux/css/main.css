@@ -612,7 +612,7 @@
 }
 
 .dd-brands-list {
-    height: 310px;
+    height: 470px;
     overflow: hidden;
 }
 .dd-brands-list.__active {
@@ -625,7 +625,7 @@
     height: 13px;
     background: url(images/catalog-arrow.png) no-repeat;
     right: 290px;
-    top: 1200px;
+    top: 1355px;
     transform: translateY(-50%)
 }
 

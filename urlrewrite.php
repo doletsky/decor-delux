@@ -19,7 +19,7 @@ $arUrlRewrite = array(
         "PATH" => "/oboi/index.php",
     ),
     array(
-        "CONDITION" => "#^/lepnina/(.*)/(.*)/(.*)#",
+        "CONDITION" => "#^/lepnina/(.*)/(.*)/product_(.*)#",
         "RULE" => "section=\$1&item=\$2",
         "ID" => "",
         "PATH" => "/lepnina/detail.php",

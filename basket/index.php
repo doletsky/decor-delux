@@ -3,6 +3,7 @@ require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
 $APPLICATION->SetTitle("Корзина");
 ?>
     <section class="container">
+        <h2>Корзина</h2>
 <?$APPLICATION->IncludeComponent(
 	"bitrix:sale.basket.basket", 
 	"decor",

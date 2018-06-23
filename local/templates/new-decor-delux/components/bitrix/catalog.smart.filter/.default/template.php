@@ -12,6 +12,7 @@
 /** @var CBitrixComponent $component */
 $this->setFrameMode(true);
 ?>
+<pre><?print_r($arResult)?></pre>
     <button class="dd-catalog__toggle-filter d-block d-sm-none">Параметры поиска</button>
     <section class="dd-catalog__filter">
         <div class="dd-catalog__filter-header d-none d-sm-block">Параметры поиска</div>

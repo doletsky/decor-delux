@@ -545,22 +545,6 @@ if ($normalCount > 0):
 			<div style="clear:both;"></div>
 		</div>
 		<div style="clear:both;"></div>
-		<div class="bx_ordercart_order_pay_center">
-
-			<?if ($arParams["USE_PREPAYMENT"] == "Y" && strlen($arResult["PREPAY_BUTTON"]) > 0):?>
-				<?=$arResult["PREPAY_BUTTON"]?>
-				<span><?=GetMessage("SALE_OR")?></span>
-			<?endif;?>
-			<?
-			if ($arParams["AUTO_CALCULATION"] != "Y")
-			{
-				?>
-				<a href="javascript:void(0)" onclick="updateBasket();" class="checkout refresh"><?=GetMessage("SALE_REFRESH")?></a>
-				<?
-			}
-			?>
-			<a href="javascript:void(0)" onclick="checkOut();" class="checkout"><?=GetMessage("SALE_ORDER")?></a>
-		</div>
 	</div>
 </div>
 <?
