@@ -36,7 +36,7 @@ require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");?>
             "DISPLAY_COMPARE" => "N",
             "DISPLAY_NAME" => "Y",
             "DISPLAY_PREVIEW_TEXT_MODE" => "E",
-            "ELEMENT_CODE" => explode("product_",$_REQUEST["item"])[1],
+            "ELEMENT_CODE" => $_REQUEST["item"],
             "ELEMENT_ID" => "",
             "FB_USE" => "Y",
             "FILE_404" => "",

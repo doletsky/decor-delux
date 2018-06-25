@@ -12,7 +12,6 @@
 /** @var CBitrixComponent $component */
 $this->setFrameMode(true);
 ?>
-<pre><?print_r($arResult)?></pre>
     <button class="dd-catalog__toggle-filter d-block d-sm-none">Параметры поиска</button>
     <section class="dd-catalog__filter">
         <div class="dd-catalog__filter-header d-none d-sm-block">Параметры поиска</div>
@@ -41,7 +40,7 @@ $this->setFrameMode(true);
             <ul class="dd-catalog__filter-item-body list-unstyled">
                 <?foreach($arItem["VALUES"] as $val => $ar):?>
                     <li class="dd-catalog__filter-item-link">
-                        <input type="checkbox" id="<? echo $ar["CONTROL_ID"] ?>" value="<? echo $ar["HTML_VALUE"] ?>" name="<? echo $ar["CONTROL_NAME"] ?>" <? echo $ar["CHECKED"]? 'checked="checked"': '' ?>>
+                        <input type="checkbox" data-code="<? echo $ar["CONTROL_CODE"] ?>" id="<? echo $ar["CONTROL_ID"] ?>" value="<? echo $ar["HTML_VALUE"] ?>" name="<? echo $ar["CONTROL_NAME"] ?>" <? echo $ar["CHECKED"]? 'checked="checked"': '' ?>>
                         <label data-role="label_<?=$ar["CONTROL_ID"]?>" for="<? echo $ar["CONTROL_ID"] ?>"><?=$ar["VALUE"];?>
                             <?if ($arParams["DISPLAY_ELEMENT_COUNT"] !== "N" && isset($ar["ELEMENT_COUNT"])):?>
                                 <span class="_count"data-role="count_<?=$ar["CONTROL_ID"]?>">(<? echo $ar["ELEMENT_COUNT"]; ?>)</span>

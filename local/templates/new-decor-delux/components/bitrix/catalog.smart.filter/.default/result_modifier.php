@@ -38,6 +38,29 @@ else
 $arParams["FILTER_VIEW_MODE"] = (isset($arParams["FILTER_VIEW_MODE"]) && toUpper($arParams["FILTER_VIEW_MODE"]) == "HORIZONTAL") ? "HORIZONTAL" : "VERTICAL";
 $arParams["POPUP_POSITION"] = (isset($arParams["POPUP_POSITION"]) && in_array($arParams["POPUP_POSITION"], array("left", "right"))) ? $arParams["POPUP_POSITION"] : "left";
 
-foreach ($arResult["ITEMS"] as $item){
-
+$arTrParams = array("replace_other"=>"-");
+$arDecSmFilter=array();
+foreach ($arResult["ITEMS"] as $iid=>$item){
+    if(count($item["VALUES"])>0){
+        foreach ($item["VALUES"] as $vid=>$val){
+            if(preg_match("/[а-яА-ЯЁё]/iu", $val["UPPER"])){
+                $control_code = Cutil::translit($val["UPPER"],"ru", $arTrParams);
+            }
+            else{
+                $control_code = strtolower(str_replace("+", "~",(str_replace(" ", "_",$val["UPPER"]))));
+            }
+            $arResult["ITEMS"][$iid]["VALUES"][$vid]["CONTROL_CODE"]=$control_code;
+            $arDecSmFilter[$control_code]=array("NAME"=>"=PROPERTY_".$iid, "VALUE"=>$vid, "IID"=>$iid);
+        }
+    }
+}
+global $arrFilter;
+if(isset($_REQUEST["params"])){
+    $_REQUEST["params"]=explode("?",$_REQUEST["params"])[0];
+    $arSmParam=explode("/",$_REQUEST["params"]);
+    $arResult["SM_PARAM"]=$arSmParam;
+    foreach ($arSmParam as $par){
+        $arrFilter[$arDecSmFilter[$par]["NAME"]]=$arDecSmFilter[$par]["VALUE"];
+        $arResult["ITEMS"][$arDecSmFilter[$par]["IID"]]["VALUES"][$arDecSmFilter[$par]["VALUE"]]["CHECKED"]=1;
+    }
 }

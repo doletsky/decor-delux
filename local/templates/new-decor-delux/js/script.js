@@ -208,6 +208,25 @@ $(document).ready(function () {
         var p_title=$('meta[property="og:title"]').attr('content');
         window.open('https://ru.pinterest.com/pin/create/button/?url='+p_url+'&media='+p_img+'&description='+p_title);
     });
+    
+    //ufs smart filter
+    $('#set_filter').click(function (e) {
+        e.preventDefault();
+        var sf_link='';
+        var param=location.pathname.split('/');
+        $('.dd-catalog__filter-item-link input:checked').each(function () {
+                sf_link+=$(this).data('code')+'/';
+        });
+        // sf_link=location.pathname+sf_link;
+        if(location.search.slice(0,1)=='?'){
+            sf_link=sf_link+location.search;
+        }
+        location.href=location.protocol+'//'+location.hostname+'/'+location.pathname.split('/')[1]+'/'+sf_link;
+    });
+    $('#del_filter').click(function (e) {
+        e.preventDefault();
+        location.href=location.protocol+'//'+location.hostname+'/'+location.pathname.split('/')[1]+'/';
+    });
 
 });
 var popupText=''; //содержимое текстового popup
@@ -229,4 +248,10 @@ function popupOpen() {
 function trim()
 {
     return this.replace(/^\s+|\s+$/g, '');
+}
+function in_array(value, array) {
+    for(var i=0; i<array.length; i++){
+        if(value == array[i]) return true;
+    }
+    return false;
 }

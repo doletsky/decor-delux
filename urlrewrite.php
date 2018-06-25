@@ -1,14 +1,14 @@
 <?
 $arUrlRewrite = array(
     array(
-        "CONDITION" => "#^/oboi/(.*)/(.*)/(.*)/(.*)#",
+        "CONDITION" => "#^/oboi/(.*)/(.*)/product_(.*)/(.*)#",
         "RULE" => "brand=\$1&collection=\$2&item=\$3",
         "ID" => "",
         "PATH" => "/oboi/detail.php",
     ),
 	array(
-		"CONDITION" => "#^/oboi/(.*)/(.*)/(.*)#",
-		"RULE" => "brand=\$1&collection=\$2",
+		"CONDITION" => "#^/oboi/(.*)/#",
+		"RULE" => "params=\$1",
 		"ID" => "",
 		"PATH" => "/oboi/index.php",
 	),

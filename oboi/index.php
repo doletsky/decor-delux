@@ -1,6 +1,25 @@
 <?
 require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
 $APPLICATION->SetTitle("Обои");
+if(isset($_REQUEST["params"])){
+    $arpar=explode("/", $_REQUEST["params"]);
+    $res = CIBlockElement::GetList(Array("SORT"=>"ASC"), array("IBLOCK_ID"=>5, "CODE"=>$arpar[0]));
+    if($ar_fields = $res->GetNext())
+    {
+        $_REQUEST["brand"]=$arpar[0];
+    }else{
+        $res = CIBlockElement::GetList(Array("SORT"=>"ASC"), array("IBLOCK_ID"=>9, "CODE"=>$arpar[0]));
+        if($ar_fields = $res->GetNext())
+        {
+            $_REQUEST["collection"]=$arpar[0];
+        }
+    }
+    $res = CIBlockElement::GetList(Array("SORT"=>"ASC"), array("IBLOCK_ID"=>9, "CODE"=>$arpar[1]));
+    if($ar_fields = $res->GetNext())
+    {
+        $_REQUEST["collection"]=$arpar[1];
+    }
+}
 
 ?>
 <?if(isset($_REQUEST["collection"])):?>
@@ -247,6 +266,7 @@ $APPLICATION->SetTitle("Обои");
 
     </section>
 <?endif?>
+
 <?
 if(isset($_REQUEST["brand"]) || isset($_REQUEST["collection"] )){
     $_GET["arrFilter_".$_GET["SF_PROP_ID"]."_".$_GET["SF_PROP_VAL"]]="Y";//$_GET["SF_PROP_ID"] & $_GET["SF_PROP_VAL"] формируются в news.detail brand result_modifier.php
