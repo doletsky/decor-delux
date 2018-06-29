@@ -80,7 +80,12 @@
     font-size: 18px;
     background: #003a5d
 }
-
+.dd-catalog__list-item-title {
+    font-size: 18px;
+    line-height: 21px;
+    height: 42px;
+    overflow: hidden;
+}
 @media (max-width: 576px) {
     .dd-subscribe {
         margin-left: -15px;
@@ -989,6 +994,10 @@
     display: block;
     border: 2px solid #7f9cae
 }
+.dd-card__img{
+    height: 406px;
+    overflow: hidden;
+}
 
 .dd-card__footer {
     padding: 10px 15px 36px;
@@ -1006,12 +1015,14 @@
 
 .dd-card__title {
     line-height: 30px;
-    font-family: OpenSans-Light
+    font-family: OpenSans-Light;
+    height: 60px;
+    overflow: hidden;
 }
 
 .dd-card__subtitle {
     font-size: 17px;
-    line-height: 34px
+    line-height: 34px;
 }
 
 @media (max-width: 576px) {
